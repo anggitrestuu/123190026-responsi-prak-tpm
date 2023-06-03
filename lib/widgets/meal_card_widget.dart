@@ -1,4 +1,5 @@
 import 'package:food_app/model/meal_by_category.dart';
+import 'package:food_app/pages/detail_page.dart';
 import 'package:food_app/shared/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -9,14 +10,14 @@ class MealCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      // onTap: () {
-      //   Navigator.push(
-      //       context,
-      //       MaterialPageRoute(
-      //           builder: (context) => MealPage(
-      //                 strCategory: meal.strCategory,
-      //               )));
-      // },
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => DetailPage(
+                      idMeal: meal.idMeal,
+                    )));
+      },
       child: Row(
         children: [
           SizedBox(

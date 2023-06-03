@@ -34,13 +34,9 @@ class CategoryService extends ChangeNotifier {
       var data = json.decode(result.body);
       List<MealByCategory> meals = [];
 
-      print(data);
-
       for (var item in data['meals']) {
         meals.add(MealByCategory.fromJson(item));
       }
-
-      print(meals);
 
       return meals;
     } else {
@@ -57,9 +53,13 @@ class CategoryService extends ChangeNotifier {
       var data = json.decode(result.body);
       List<MealModel> meals = [];
 
+      // print(data);
+
       for (var item in data['meals']) {
         meals.add(MealModel.fromJson(item));
       }
+
+      print(meals);
 
       return meals[0];
     } else {
